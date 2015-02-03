@@ -19,10 +19,15 @@ public class Main {
 	    lines.add(sc.nextLine());
 	}
 	
-	List<String> dates = doYourThing(numberOfIntervals, lines);
+	List<String> dates = doYourThing(numberOfIntervals, lines, new Function<String, String>() {
+	    @Override
+	    public String apply(String t) {
+		return t;
+	    }
+	});
     }
 
-    public static LinkedList<String> doYourThing(Integer numberOfIntervals, List<String> lines) {
+    public static LinkedList<String> doYourThing(Integer numberOfIntervals, List<String> lines, Function<String, String> function) {
 	LinkedList<String> dates = new LinkedList<>();
 	
 	int stepSize = lines.size() / numberOfIntervals;
@@ -30,7 +35,6 @@ public class Main {
 	for(int step = 0; step < numberOfIntervals; step++ ) {
 	    int currentIndex = step * stepSize;
 	    String currentLine = lines.get(currentIndex);
-	    System.out.println("current index " + currentIndex  + " current line " + currentLine);
 	    dates.add(currentLine);
 	}
 	// adds last element
