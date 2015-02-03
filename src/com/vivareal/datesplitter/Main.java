@@ -19,7 +19,7 @@ public class Main {
 	    lines.add(sc.nextLine());
 	}
 	
-	List<String> dates = doYourThing(numberOfIntervals, lines, new DropId());
+	List<String> dates = doYourThing(numberOfIntervals, lines, new DropId(new FormatAsZuluTime()));
     }
 
     public static LinkedList<String> doYourThing(Integer numberOfIntervals, List<String> lines, Function<String, String> function) {

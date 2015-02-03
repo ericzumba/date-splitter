@@ -12,12 +12,7 @@ public class MainTest {
     
     private List<String> lines;
     
-    private Function<String, String> noTransformation = new Function<String, String>() {
-        @Override
-        public String apply(String t) {
-    		return t;
-        }
-    };
+    private Function<String, String> noTransformation = new NoTransformation<String>();
 
     @Before
     public void setup() {

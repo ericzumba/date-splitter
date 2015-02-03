@@ -9,11 +9,12 @@ public class DropIdTest {
     
     private String register;
     private DropId dropId;
+   
 
     @Before
     public void setup() {
 	register = "35928159, 2012-07-30 15:14:03.552";
-	dropId = new DropId();
+	dropId = new DropId(new NoTransformation<String>());
     }
 
     @Test
