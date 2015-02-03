@@ -1,0 +1,5 @@
+cd scripts
+./get_dates.sh host user number_of_intervals 
+
+# a debug folder will be created inside the scripts folder
+# with a last_read.dates file that is the output read from postgres
