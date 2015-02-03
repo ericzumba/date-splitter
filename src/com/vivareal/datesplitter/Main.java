@@ -20,18 +20,21 @@ public class Main {
 	}
 	
 	List<String> dates = doYourThing(numberOfIntervals, lines);
-	
-	
     }
 
-    public static List<String> doYourThing(Integer numberOfIntervals, List<String> lines) {
+    public static LinkedList<String> doYourThing(Integer numberOfIntervals, List<String> lines) {
 	LinkedList<String> dates = new LinkedList<>();
 	
 	int stepSize = lines.size() / numberOfIntervals;
-	
-	for(int i = 0; i < numberOfIntervals; i++ ) {
-	    dates.add(lines.get(i * stepSize));
+
+	for(int step = 0; step < numberOfIntervals; step++ ) {
+	    int currentIndex = step * stepSize;
+	    String currentLine = lines.get(currentIndex);
+	    System.out.println("current index " + currentIndex  + " current line " + currentLine);
+	    dates.add(currentLine);
 	}
+	// adds last element
+	dates.add(lines.get(lines.size() - 1));
 	
 	return dates;
     }

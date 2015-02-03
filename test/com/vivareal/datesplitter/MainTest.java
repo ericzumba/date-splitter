@@ -1,7 +1,10 @@
 package com.vivareal.datesplitter;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
+
+import org.junit.Assert;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -27,8 +30,17 @@ public class MainTest {
     }
 
     @Test
-    public void test() {
-	Main.doYourThing(1, lines);
+    public void oneInterval() {
+	LinkedList<String> dates = Main.doYourThing(1, lines);
+	Assert.assertEquals("2012-04-17 11:40:10.600", dates.get(0));
+	Assert.assertEquals("2012-04-17 11:40:10.609", dates.get(1));
     }
 
+    @Test
+    public void twoIntervals() {
+	LinkedList<String> dates = Main.doYourThing(2, lines);
+	Assert.assertEquals("2012-04-17 11:40:10.600", dates.get(0));
+	Assert.assertEquals("2012-04-17 11:40:10.605", dates.get(1));
+	Assert.assertEquals("2012-04-17 11:40:10.609", dates.get(2));
+    }
 }
