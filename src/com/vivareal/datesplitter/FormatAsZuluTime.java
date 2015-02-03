@@ -4,7 +4,7 @@ public class FormatAsZuluTime implements Function<String, String> {
 
     @Override
     public String apply(String t) {
-	return null;
+	return t.replaceAll(" ", "T") + "Z";
     }
 
 }
