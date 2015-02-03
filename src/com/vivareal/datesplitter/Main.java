@@ -19,12 +19,7 @@ public class Main {
 	    lines.add(sc.nextLine());
 	}
 	
-	List<String> dates = doYourThing(numberOfIntervals, lines, new Function<String, String>() {
-	    @Override
-	    public String apply(String t) {
-		return t;
-	    }
-	});
+	List<String> dates = doYourThing(numberOfIntervals, lines, new DropId());
     }
 
     public static LinkedList<String> doYourThing(Integer numberOfIntervals, List<String> lines, Function<String, String> function) {
