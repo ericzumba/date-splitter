@@ -43,4 +43,23 @@ public class MainTest {
 	Assert.assertEquals("2012-04-17 11:40:10.605", dates.get(1));
 	Assert.assertEquals("2012-04-17 11:40:10.609", dates.get(2));
     }
+    
+    @Test
+    public void threeIntervals() {
+	LinkedList<String> dates = Main.doYourThing(3, lines);
+	Assert.assertEquals("2012-04-17 11:40:10.600", dates.get(0));
+	Assert.assertEquals("2012-04-17 11:40:10.603", dates.get(1));
+	Assert.assertEquals("2012-04-17 11:40:10.606", dates.get(2));
+	Assert.assertEquals("2012-04-17 11:40:10.609", dates.get(3));
+    }
+    
+    @Test
+    public void fourIntervals() {
+	LinkedList<String> dates = Main.doYourThing(4, lines);
+	Assert.assertEquals("2012-04-17 11:40:10.600", dates.get(0));
+	Assert.assertEquals("2012-04-17 11:40:10.602", dates.get(1));
+	Assert.assertEquals("2012-04-17 11:40:10.604", dates.get(2));
+	Assert.assertEquals("2012-04-17 11:40:10.606", dates.get(3));
+	Assert.assertEquals("2012-04-17 11:40:10.609", dates.get(4));
+    }
 }
